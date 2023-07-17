@@ -59,8 +59,7 @@ canvas {
 
 #app {
   position: fixed;
-  bottom: 20px;
-  left: 20px;
+  top: 0;
 }
 
 .content {

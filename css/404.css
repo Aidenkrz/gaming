@@ -1,15 +1,17 @@
 @font-face {
   font-family: "DS";
-  src: url("fonts/Nintendo-DS-BIOS.ttf") format("truetype");
+  src: url("/fonts/Nintendo-DS-BIOS.ttf") format("truetype");
 }
 
-#frog {
+body {
   background-color: #000000;
   display: block;
+  color: white;
+  font-family: "DS";
+  font-size: 30px;
 }
 
-#frog img {
-  padding-top: 5em;
+body img {
   width: 20em;
   height: auto;
   display: block;
@@ -17,9 +19,7 @@
   margin-right: auto;
 }
 
-#frog h {
-  font-family: "DS";
-  color: white;
+body h {
   text-align: center;
   width: 30vw;
   height: auto;
@@ -28,7 +28,6 @@
   margin-right: 35vw;
 }
 
-#frog a {
-  font-family: "DS";
+body a {
   color: aquamarine;
 }
