@@ -73,7 +73,8 @@ canvas {
   margin-bottom: 10px;
   margin-top: 5px;
   padding: 0px;
-  text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
+  text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000,
+    2px 2px 0 #000;
 }
 
 #footer-banners {
@@ -90,7 +91,7 @@ canvas {
   justify-content: center;
   align-items: flex-end;
   flex-wrap: wrap;
-  
+
   image-rendering: auto;
   image-rendering: crisp-edges;
   image-rendering: pixelated;
@@ -109,7 +110,6 @@ canvas {
   margin-top: 20px;
 }
 
-
 .enlargehover {
   transition: transform 0.3s;
 }
@@ -117,4 +117,3 @@ canvas {
 .enlargehover:hover {
   transform: scale(1.25);
 }
-
