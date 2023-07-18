@@ -56,14 +56,16 @@
         <p>before you chat</p>
         <a href="https://dontasktoask.com/">don't ask to ask, just ask</a>&ensp;
         <a href="https://nohello.net/en/">no hello</a>&ensp;
-        <a href="https://xyproblem.info/">the xy problem</a>&ensp;
-        <br /><br />
-        <p id="subtitle">hits</p>
-        <script
-          type="text/javascript"
-          src="//counter.websiteout.net/js/6/0/0/0"
-        ></script>
+        <a href="https://xyproblem.info/">the xy problem</a>&ensp; <br /><br />
 
+        <button onclick="displayCBox()">Open ChatBox</button>
+        <div id="CBoxDisplay"></div>
+        <script>
+          function displayCBox() {
+            document.getElementById("CBoxDisplay").innerHTML =
+              '<iframe src="https://www3.cbox.ws/box/?boxid=3530101&boxtag=JppnE7" width="80%" height="350" allowtransparency="yes" allow="autoplay" frameborder="1" marginheight="0" marginwidth="0" scrolling="auto"></iframe>';
+          }
+        </script>
       </div>
 
       <div id="footer-banners">
