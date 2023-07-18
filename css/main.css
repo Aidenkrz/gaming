@@ -1,6 +1,6 @@
 @font-face {
   font-family: "DS";
-  src: url("fonts/Nintendo-DS-BIOS.ttf") format("truetype");
+  src: url("/fonts/Nintendo-DS-BIOS.ttf") format("truetype");
 }
 
 body {
@@ -15,7 +15,6 @@ body {
   background-size: 200% 200%; /* Adjust the size of the animated background */
   animation: gradientAnimation 40s ease infinite; /* Adjust the animation duration */
   background-attachment: fixed;
-  overflow: hidden;
 }
 
 @keyframes gradientAnimation {
@@ -99,13 +98,13 @@ canvas {
 
 #title {
   font-size: 60px;
-
   margin-top: 30px;
   margin-bottom: 50px;
 }
 
 #subtitle {
   font-size: 40px;
+  font-family: DS;
   margin-top: 20px;
 }
 
