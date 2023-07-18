@@ -71,6 +71,10 @@ html {
   color: #7fffd4;
 }
 
+.nounder {
+  text-decoration: none;
+}
+
 .content button {
   font-family: DS;
   font-size: 30px;
@@ -84,9 +88,10 @@ html {
 
 #title {
   font-size: 60px;
-  margin-top: 30px;
+  margin-top: -10px;
   margin-bottom: 50px;
 }
+
 #subtitle {
   margin: 0;
   padding: 0;
