@@ -7,39 +7,28 @@ function updateCanvas() {
   canvas.height = window.innerHeight;
 }
 
-// Add an event listener for window resize
 window.addEventListener("resize", function () {
   updateCanvas();
 });
 
-// Initialize the canvas size
 updateCanvas();
 
-// Rest of the code...
-
 var stars = [];
-var numStars = Math.floor((canvas.width * canvas.height) / 10000); // Adjust the division factor as desired
+var numStars = Math.floor((canvas.width * canvas.height) / 10000);
 
-var mouseX = -1; // Initial cursor position outside the canvas
+var mouseX = -1;
 var mouseY = -1;
-var thresholdDistance = 100; // Adjust this value as needed
+var thresholdDistance = 100;
 
 function createStars() {
   stars = [];
   for (var i = 0; i < numStars; i++) {
-    var color =
-      "rgb(" +
-      Math.random() * 255 +
-      "," +
-      Math.random() * 255 +
-      "," +
-      Math.random() * 255 +
-      ")";
+    var color = "white";
     var size = Math.random() * (15 - 5) + 5;
-    var targetSize = size; // Set the initial target size to the generated size
+    var targetSize = size;
     var x = Math.random() * canvas.width;
     var y = Math.random() * canvas.height;
-    var speed = 1; // Set the speed to a fixed value of 2
+    var speed = 1;
     var velocity = {
       x: 0,
       y: 0,
@@ -47,13 +36,13 @@ function createStars() {
     var star = {
       x: x,
       y: y,
-      originalX: x, // Store the original positions
+      originalX: x,
       originalY: y,
       speed: speed,
       velocity: velocity,
       color: color,
       size: size,
-      targetSize: targetSize, // Add the target size property
+      targetSize: targetSize,
     };
     stars.push(star);
   }
@@ -70,7 +59,6 @@ function updateStars() {
       star.velocity.x += (star.speed * dx) / distance;
       star.velocity.y += (star.speed * dy) / distance;
 
-      // Add a small random velocity when star reaches the cursor
       if (distance < 5) {
         star.velocity.x += Math.random() * 0.2 - 0.1;
         star.velocity.y += Math.random() * 0.2 - 0.1;
@@ -89,12 +77,10 @@ function updateStars() {
     star.x += star.velocity.x;
     star.y += star.velocity.y;
 
-    star.velocity.x *= 0.9; // Damping factor for smoother transitions
+    star.velocity.x *= 0.9;
     star.velocity.y *= 0.9;
 
-    // Update target size randomly
     if (Math.random() < 0.05) {
-      // Adjust the probability as desired
       star.targetSize = Math.random() * (15 - 5) + 5;
     }
   }
@@ -104,26 +90,22 @@ function drawStars() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   for (var i = 0; i < stars.length; i++) {
     var star = stars[i];
-    var size = lerp(star.size, star.targetSize, 0.1); // Smoothly interpolate the size
-    var halfSize = size * 0.5; // Calculate half size
+    var size = lerp(star.size, star.targetSize, 0.1);
     
-    ctx.shadowBlur = size; // Set the shadow blur size based on the star size
-    ctx.shadowColor = star.color; // Set the shadow color to the star's color
+    ctx.shadowBlur = size*2;
+    ctx.shadowColor = star.color;
 
     ctx.fillStyle = star.color;
     ctx.beginPath();
-    ctx.arc(star.x + halfSize, star.y + halfSize, halfSize, 0, Math.PI * 2); // Use arc to draw a circle at the center
+    ctx.rect(star.x - size/2, star.y - size/2, size, size);
     ctx.fill();
 
-    star.size = size; // Update the current size of the star
+    star.size = size;
   }
 }
 
-// ...
+var shootingStars = [];
 
-var shootingStars = []; // Array to store shooting stars
-
-// Function to create shooting stars
 function createShootingStars(numStars) {
   for (var i = 0; i < numStars; i++) {
     var color = "rgba(255, 255, 255, " + (Math.random() / 2 + 0.5) + ")";
@@ -148,27 +130,24 @@ function createShootingStars(numStars) {
   }
 }
 
-// Function to update shooting stars
 function updateShootingStars() {
   for (var i = 0; i < shootingStars.length; i++) {
     var shootingStar = shootingStars[i];
     shootingStar.x += shootingStar.speed;
     shootingStar.y += shootingStar.speed * 0.5;
   }
-  // Remove shooting stars that have gone off the screen
   shootingStars = shootingStars.filter(function (star) {
     return star.x < canvas.width + 200 && star.y < canvas.height + 200;
   });
 }
 
-// Function to draw shooting stars
 function drawShootingStars() {
   for (var i = 0; i < shootingStars.length; i++) {
     var shootingStar = shootingStars[i];
 
-    // Calculate trail position
-    var trailLength = 50; // Adjust the length of the trail as desired
-    var trailWidth = shootingStar.size; // Adjust the width of the trail as desired
+
+    var trailLength = 50;
+    var trailWidth = shootingStar.size;
     var trailEndX = shootingStar.x - shootingStar.speed * trailLength;
     var trailEndY = shootingStar.y - shootingStar.speed * 0.5 * trailLength;
 
@@ -191,7 +170,6 @@ function drawShootingStars() {
     );
     ctx.stroke();
 
-    // Draw the shooting star
     ctx.fillStyle = shootingStar.color;
     ctx.fillRect(
       shootingStar.x,

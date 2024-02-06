@@ -14,28 +14,7 @@ canvas {
 }
 
 body {
-  background: linear-gradient(
-    45deg,
-    #04030a,
-    #190036,
-    #240063,
-    #0f0149,
-    #28014d
-  );
-  background-size: 200% 200%;
-  animation: gradientAnimation 40s ease infinite;
-  background-attachment: fixed;
-}
-@keyframes gradientAnimation {
-  0% {
-    background-position: 0 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0 50%;
-  }
+  background: black;
 }
 
 body,
@@ -43,6 +22,7 @@ div,
 html {
   margin: 0;
   padding: 0;
+
 }
 #app {
   position: fixed;
@@ -104,10 +84,8 @@ a {
 
 #footer-banners {
   text-align: center;
-  position: absolute;
   bottom: 0;
   width: 100%;
-  height: 10rem;
   image-rendering: auto;
   image-rendering: crisp-edges;
   image-rendering: pixelated;
@@ -148,8 +126,17 @@ a {
 
 #page-container {
   position: relative;
-  min-height: 100vh;
+  margin: auto;
+  margin-top: 2vh;
+  margin-left: 2vh;
+  margin-right: 2vh;
+  padding-left: 1.5vh;
+  padding-right: 1.5vh;
+
+  border: 4px double white;
+  background-color: rgba(0, 0, 0, 0.811);
+  
 }
 #content-wrap {
-  padding-bottom: 12rem;
+  padding-bottom: 1rem;
 }

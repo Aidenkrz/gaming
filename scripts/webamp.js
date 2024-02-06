@@ -4,6 +4,14 @@ if (window.innerWidth > window.innerHeight/1.2) {
     initialTracks: [
       {
         metaData: {
+          artist: "Origami Repetika",
+          title: "From The Sparkles In Your Eyes",
+        },
+        url: "music/ftsiye.mp3",
+        duration: 186,
+      },
+      {
+        metaData: {
           artist: "Ketsa",
           title: "Caught Out",
         },
@@ -17,14 +25,6 @@ if (window.innerWidth > window.innerHeight/1.2) {
         },
         url: "music/nt.mp3",
         duration: 110,
-      },
-      {
-        metaData: {
-          artist: "Origami Repetika",
-          title: "From The Sparkles In Your Eyes",
-        },
-        url: "music/ftsiye.mp3",
-        duration: 186,
       },
       {
         metaData: {
@@ -43,5 +43,9 @@ if (window.innerWidth > window.innerHeight/1.2) {
         duration: 191,
       },
     ],
+    initialSkin: {
+      url: 
+   "/misc/dosamp.wsz"
+  },
   }).renderWhenReady(document.getElementById("app"));
 }
