@@ -1,0 +1,119 @@
+@font-face {
+    font-family: "DS";
+    src: url("/fonts/DOS-VGA.tff") format("truetype");
+}
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    image-rendering: -moz-crisp-edges;
+    /* Firefox */
+    image-rendering: -webkit-optimize-contrast;
+    /* Chrome, Safari */
+    image-rendering: -o-crisp-edges;
+    /* Opera */
+    image-rendering: pixelated;
+    /* General */
+}
+
+html {
+    background: black;
+    overflow: hidden;
+}
+
+body,
+div,
+html,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    padding-top: 0.1vh;
+}
+
+a {
+    color: #7fffd4;
+}
+
+img {
+    height: 25  vh;
+    width: auto;
+}
+
+#page-container {
+
+    margin-top: 2vh;
+    margin-left: 6vw;
+    margin-right: 6vw;
+    margin-bottom: 2vh;
+
+    padding-left: 1.5vw;
+    padding-right: 1.5vw;
+
+    display: flex;
+    text-align: center;
+    color: #fff;
+    font-family: DS;
+    font-size: 2.5vh;
+    text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000,
+        2px 2px 0 #000;
+}
+
+.content {
+    overflow-y: auto;
+    height: 100%;
+}
+
+table {
+    position: relative;
+    width: 100%;
+    margin-top: 2vh;
+    border-spacing: 0.3vh;
+    table-layout: fixed;
+}
+
+th {
+    height: 10vh;
+    vertical-align: middle;
+
+    position: relative;
+    border: 0.3vh double white;
+    background-color: rgba(0, 0, 0, 0.694);
+}
+
+td {
+    height: 75vh;
+    vertical-align: top;
+
+    position: relative;
+    border: 0.3vh double white;
+    background-color: rgba(0, 0, 0, 0.694);
+}
+
+#page-title {
+    font-size: 3vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#user {
+    width: 10vh;
+    font-size: 2vh;
+    padding-bottom: 0.2em;
+    background: rgba(0, 0, 0, 0.955);
+}
+
+#user div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#user img {
+    height: 5vh;
+}
